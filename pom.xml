@@ -2,35 +2,40 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.test</groupId>
+	<groupId>com.viiyue.plugins</groupId>
 	<artifactId>mapper</artifactId>
-	<version>1.1.x</version>
+	<version>1.2.x</version>
 	<packaging>jar</packaging>
 
-	<name>mapper</name>
-	<url>http://maven.apache.org</url>
+	<name>mybatis-mapper-demo</name>
+	<url>https://github.com/tangxbai/mybatis-mapper-demo</url>
+	<description>Mybatis-mapper basic function demo</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<log4j.version>1.7.28</log4j.version>
+		<lombok.version>1.16.20</lombok.version>
+		<mybatis-mapper.version>1.2.0</mybatis-mapper.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.28</version>
+			<version>${log4j.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.20</version>
+			<version>${lombok.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.viiyue.plugins</groupId>
 			<artifactId>mybatis-mapper</artifactId>
-			<version>1.1.1</version>
+			<version>${mybatis-mapper.version}</version>
 		</dependency>
 	</dependencies>
 </project>
