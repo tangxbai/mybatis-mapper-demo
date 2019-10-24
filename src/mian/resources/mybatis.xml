@@ -19,11 +19,11 @@
 		<setting name="defaultStatementTimeout" value="10" />
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 
-		<!-- 这是开启XML解析的主要配置，如果您不配置此项，您将无法使用XML中的各种模板语法 -->
+		<!-- 这是开启XML解析的主要配置，如果您不配置此项，将无法使用XML中的各种模板语法 -->
 		<setting name="defaultScriptingLanguage" value="com.viiyue.plugins.mybatis.MyBatisMapperLanguageDriver" />
 	</settings>
 
-	<!-- 别名配置，启用的话会对插件提供良好支持 -->
+	<!-- 别名配置，强烈建议配置此项，否则插件将无法提供良好支持 -->
 	<typeAliases>
 		<package name="com.viiyue.mapper.demo.model" />
 		<package name="com.viiyue.mapper.demo.bean" />

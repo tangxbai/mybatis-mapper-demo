@@ -5,10 +5,12 @@
 	<!-- 
 	~ 查询节点如果不写resultType/resultMap属性的话，在方法上标注@EnableResultMap，
 	~ 可以引用插件生成的BaseResultMap结果映射，也可以显式地指明resultMap引用。
-	~
+	~ 
+	~ 方法一：
 	~ @EnableResultMap
 	~ List<AccountDTO> selectByLoginName( String loginName );
 	~
+	~ 方法二：
 	~ <select id="selectByLoginName" resultMap="BaseResultMap">
 	~     ....
 	~ </select>
