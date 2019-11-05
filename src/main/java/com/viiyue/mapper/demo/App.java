@@ -17,6 +17,29 @@ public class App {
 	static final String LOGIN_NAME = "tangxbai";
 	static final String EMAIL = "tangxbai@hotmail.com";
 	
+	public static void main( String [] args ) throws Exception {
+		SqlSessionFactory factory = new MyBatisMapperFactoryBuilder().build( Resources.getResourceAsStream( "mybatis.xml" ) );
+		SqlSession session = factory.openSession();
+		
+		Class<AccountMapper> mapperType = AccountMapper.class;
+		String namespace = mapperType.getName();
+		AccountMapper mapper = session.getMapper( mapperType );
+		
+		runBaseDeleteMapper( mapper, namespace );
+		runBaseInsertMapper( mapper, namespace );
+		runBaseExampleMapper( mapper, namespace );
+		runBaseSelectLimitMapper( mapper, namespace );
+		runBaseSelectMapper( mapper, namespace );
+		runBaseUpdateMapper( mapper, namespace );
+		runAggregateFunctionMapper( mapper, namespace );
+		runForUpdateMapper( mapper, namespace );
+		runLogicallyDeleteMapper( mapper, namespace );
+		runRecycleBinMapper( mapper, namespace );
+		runAccountMapper( mapper, namespace );
+		
+		session.commit();
+	}
+	
 	static void runBaseDeleteMapper( AccountMapper mapper, String namespace ) {
 		Printer.print( namespace, "delete", () -> mapper.delete( Account.builder().loginName( LOGIN_NAME ).build() ) );
 		Printer.print( namespace, "deleteByPrimaryKey", () -> mapper.deleteByPrimaryKey( 1L ) );
@@ -116,30 +139,6 @@ public class App {
 	
 	static void runAccountMapper( AccountMapper mapper, String namespace ) {
 		Printer.print( namespace, "selectByLoginName", () -> mapper.selectByLoginName( "tangxbai" ) );
-	}
-	
-	public static void main( String [] args ) throws Exception {
-		
-		SqlSessionFactory factory = new MyBatisMapperFactoryBuilder().build( Resources.getResourceAsStream( "mybatis.xml" ) );
-		SqlSession session = factory.openSession();
-		
-		Class<AccountMapper> mapperType = AccountMapper.class;
-		String namespace = mapperType.getName();
-		AccountMapper mapper = session.getMapper( mapperType );
-		
-		runBaseDeleteMapper( mapper, namespace );
-		runBaseInsertMapper( mapper, namespace );
-		runBaseExampleMapper( mapper, namespace );
-		runBaseSelectLimitMapper( mapper, namespace );
-		runBaseSelectMapper( mapper, namespace );
-		runBaseUpdateMapper( mapper, namespace );
-		runAggregateFunctionMapper( mapper, namespace );
-		runForUpdateMapper( mapper, namespace );
-		runLogicallyDeleteMapper( mapper, namespace );
-		runRecycleBinMapper( mapper, namespace );
-		runAccountMapper( mapper, namespace );
-		
-		session.commit();
 	}
 	
 }

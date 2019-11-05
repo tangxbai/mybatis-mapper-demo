@@ -2,7 +2,6 @@ package com.viiyue.mapper.demo.model;
 
 import java.util.Date;
 
-import com.viiyue.mapper.demo.handler.BooleanTypeHandler;
 import com.viiyue.plugins.mybatis.annotation.bean.DefaultOrderBy;
 import com.viiyue.plugins.mybatis.annotation.bean.Table;
 import com.viiyue.plugins.mybatis.annotation.member.Column;
@@ -41,7 +40,7 @@ public class BaseModel {
 	private Long id;
 	
 	@Index( Integer.MAX_VALUE - 4 )
-	@Column( jdcbType = Type.CHAR, typeHandler = BooleanTypeHandler.class )
+	@Column( jdcbType = Type.CHAR )
 	@LogicallyDelete( selectValue = "Y", deletedValue = "N" ) // 开启逻辑删除支持，只能配置一次
 	private Boolean display;
 
