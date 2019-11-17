@@ -1,5 +1,5 @@
 # mybatis-mapper-demo
-[![mybatis-mapper](https://img.shields.io/badge/mybatis--mapper-1.3.0-brightgreen)]([https://search.maven.org/search?q=g:com.viiyue.plugins%20AND%20a:mybatis-mapper&core=gav](https://search.maven.org/search?q=g:com.viiyue.plugins AND a:mybatis-mapper&core=gav)) 
+[![mybatis-mapper](https://img.shields.io/badge/mybatis--mapper-1.3.0-brightgreen)](https://search.maven.org/search?q=g:com.viiyue.plugins%20AND%20a:mybatis-mapper&core=gav)
 
 使用说明：
 
