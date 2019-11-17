@@ -4,6 +4,7 @@
 	<!-- JDBC和偏好配置 -->
 	<properties resource="jdbc.properties">
 		<property name="enableLogger" value="true" />
+		<property name="enableMapperScanLog" value="true" />
 		<property name="enableRuntimeLog" value="true" />
 		<property name="enableCompilationLog" value="true" />
 		<property name="enableKeywordsToUppercase" value="true" />
@@ -28,6 +29,11 @@
 		<package name="com.viiyue.mapper.demo.model" />
 		<package name="com.viiyue.mapper.demo.bean" />
 	</typeAliases>
+
+	<!-- 全局类型转换处理器 -->
+	<typeHandlers>
+		<package name="com.viiyue.mapper.demo.handler" />
+	</typeHandlers>
 
 	<!-- 基础环境变量配置 -->
 	<environments default="development">
