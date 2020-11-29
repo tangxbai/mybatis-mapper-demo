@@ -2,6 +2,8 @@ package com.viiyue.mapper.demo.model;
 
 import java.util.Date;
 
+import org.apache.ibatis.type.JdbcType;
+
 import com.viiyue.plugins.mybatis.annotation.bean.DefaultOrderBy;
 import com.viiyue.plugins.mybatis.annotation.bean.Table;
 import com.viiyue.plugins.mybatis.annotation.member.Column;
@@ -15,7 +17,6 @@ import com.viiyue.plugins.mybatis.annotation.rule.NamingRule;
 import com.viiyue.plugins.mybatis.annotation.rule.ValueRule;
 import com.viiyue.plugins.mybatis.enums.ExpressionStyle;
 import com.viiyue.plugins.mybatis.enums.NameStyle;
-import com.viiyue.plugins.mybatis.enums.Type;
 import com.viiyue.plugins.mybatis.enums.ValueStyle;
 
 import lombok.Getter;
@@ -40,7 +41,7 @@ public class BaseModel {
 	private Long id;
 	
 	@Index( Integer.MAX_VALUE - 4 )
-	@Column( jdcbType = Type.CHAR )
+	@Column( jdbcType = JdbcType.CHAR )
 	@LogicallyDelete( selectValue = "Y", deletedValue = "N" ) // 开启逻辑删除支持，只能配置一次
 	private Boolean display;
 
